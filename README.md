@@ -1,5 +1,8 @@
 # PetBot
 
+PetBot is a pet-like robot that can be a good companion and bring joys to people’s daily lives.
+When the petbot owner do some specific gestures, petbot can perform corresponding actions or behaviors, such as spinning around, tracking and stopping.
+
 ### Start
 The python version should be at least 3.8.0.
 ```
