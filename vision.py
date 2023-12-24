@@ -28,7 +28,6 @@ gesture_count = 0
 person_count = 0
 flag = True
 
-cap = cv2.VideoCapture(1)
 pipeline = rs.pipeline()
 config = rs.config()
 config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
@@ -42,9 +41,8 @@ while True:
     if depth and color_frame:
         frame = np.asanyarray(color_frame.get_data())
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        _, frame_web = cap.read()
         person, f_x, f_z, filtered_z, filtered_x = detect_distance(depth, frame_rgb, f_x, f_z, filtered_z, filtered_x)
-        gesture, mode, gesture_count = detect_gesture(frame_web, gesture, mode, gesture_count)
+        gesture, mode, gesture_count = detect_gesture(frame_rgb, gesture, mode, gesture_count)
         
         if person:
             person_count = 0
@@ -68,7 +66,7 @@ while True:
                 distance_z = 1
                 distance_x = 0
             elif mode == 4: # 'playground'
-                turn, distance_x = detect_ball(frame_web)
+                turn, distance_x = detect_ball(frame_rgb)
                 distance_z = filtered_z
             else: # unknown
                 pass
