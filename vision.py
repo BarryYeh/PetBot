@@ -8,6 +8,7 @@ from detect_distance import detect_distance
 from detect_home import detect_home
 from detect_ball import detect_ball
 
+# TODO: REPLACE WITH YOUR PATH
 fname =  'C:/Users/florr/OneDrive/Desktop/share_virtualbox/input.txt'
 open(fname, 'w').close()
 f = open(fname, 'w', buffering=1)
