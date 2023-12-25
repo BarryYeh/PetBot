@@ -29,3 +29,6 @@ sudo chmod 777 /dev/ttyUSB0
 ./demo1 -robotPort /dev/ttyUSB0
 ```
 
+### Demo Video
+https://docs.google.com/presentation/d/1TZ7HJy8d7zQvzQ1J8K1qfp0ocXIOoYm9YB7e1O8espE/edit?usp=share_link
+
